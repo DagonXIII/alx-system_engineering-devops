@@ -1,5 +1,5 @@
-#!/bin/bash/env bash
-# This script is displaying "Best School" 10 times
+#!/usr/bin/env bash
+# This script displays Best School 10 times using the until loop
 
 counter=0
 
