@@ -2,11 +2,11 @@
 # This script stops the 4-to_infinity_and_beyond process.
 
 # Find the process ID (PID) of 4-to_infinity_and_beyond
-pid=$(pgrep -f "4-to_infinity_and_beyond")
+PID=$(pgrep -f "4-to_infinity_and_beyond")
 
-if [ -n "$pid" ]; then
+if [ -n "$PID" ]; then
   # Send a termination signal to the process
-  kill "$pid"
+  kill "$PID"
   echo "Process terminated"
 else
   echo "Process not found"
