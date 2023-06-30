@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-
-trap "echo 'I am invincible!!!'" SIGTERM
+# Displays "To infinity and beyond" indefinitely with a sleep of 2 seconds
 
 while true; do
     echo "To infinity and beyond"
