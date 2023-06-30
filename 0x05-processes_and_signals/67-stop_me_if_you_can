@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-# Stops the "7-highlander" process
-
-trap 'echo "I am invincible!!!"' SIGTERM
-
-pkill -f "7-highlander"
