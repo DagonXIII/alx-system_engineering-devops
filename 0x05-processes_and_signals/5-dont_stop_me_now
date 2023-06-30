@@ -10,5 +10,5 @@ if [[ -n $PID ]]; then
     kill "$PID"
     echo "Process terminated"
 else
-    echo "Process not found"
+    echo "Process not running"
 fi
