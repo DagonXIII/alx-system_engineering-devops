@@ -4,4 +4,4 @@ regex = /School/
 input = ARGV[0]
 
 matches = input.scan(regex).join
-puts matches + "$" unless matches.empty?
+puts "#{matches}$" unless matches.empty?
