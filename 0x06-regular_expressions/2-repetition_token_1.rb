@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-regex = /hb[t]?n/
+regex = /hbt+n/
 
 input = ARGV[0]
 
