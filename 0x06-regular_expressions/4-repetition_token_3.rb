@@ -1,3 +1,9 @@
 #!/usr/bin/env ruby
 
-puts ARGV[0].scan(/hbt*n/).join
+input = ARGV[0]
+
+regex = /hbt+n/
+
+matches = input.scan(regex)
+
+puts matches.empty? ? "" : matches.join(',')
