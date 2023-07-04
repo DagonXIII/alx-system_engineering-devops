@@ -3,5 +3,8 @@
 regex = /School/
 input = ARGV[0]
 
-matches = input.scan(regex).join
-puts matches + '$'
+if input.match?(regex)
+  puts "School"
+else
+  puts ""
+end
