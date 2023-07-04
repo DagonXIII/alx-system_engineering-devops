@@ -3,6 +3,6 @@
 regex = /School/
 input = ARGV[0]
 
-match = input.match(regex)
+matches = input.scan(regex)
 
-puts match ? match[0] : ""
+puts matches.empty? ? "" : matches.join('')
