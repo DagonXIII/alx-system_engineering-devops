@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
-regex = /hbt+n/
+regex = /hbt*n/
 
 input = ARGV[0]
 
-matches = input.scan(regex)
+match = input.match(regex)
 
-puts matches.join(',')
+puts match.to_s
