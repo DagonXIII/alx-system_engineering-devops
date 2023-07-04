@@ -3,4 +3,5 @@
 regex = /School/
 input = ARGV[0]
 
-puts input.match(regex)
+matches = input.scan(regex).join
+puts matches + '$'
