@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script configures the IP addresses for localhost and facebook.com
+
+# Update /etc/hosts file
+sudo sed -i 's/^127.0.0.1.*$/127.0.0.2 localhost/' /etc/hosts
+sudo sed -i 's/^8.8.8.8.*$/157.240.11.35 facebook.com/' /etc/hosts
+
+# Flush DNS cache
+sudo systemctl restart systemd-resolved.service
