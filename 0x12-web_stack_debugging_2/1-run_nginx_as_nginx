@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# This script configures Nginx to run as the nginx user and listen on port 8080.
+
+# Install Nginx
+apt-get update
+apt-get install -y nginx
+
+# Backup the default Nginx config
+mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
+
+# Create a new Nginx config with the desired settings
+echo 'user nginx;' > /etc/nginx/nginx.conf
+echo 'worker_processes auto;' >> /etc/nginx/nginx.conf
+echo 'events {' >> /etc/nginx/nginx.conf
+echo '  worker_connections 1024;' >> /etc/nginx/nginx.conf
+echo '}' >> /etc/nginx/nginx.conf
+echo 'http {' >> /etc/nginx/nginx.conf
+echo '  include /etc/nginx/mime.types;' >> /etc/nginx/nginx.conf
+echo '  default_type application/octet-stream;' >> /etc/nginx/nginx.conf
+echo '  sendfile on;' >> /etc/nginx/nginx.conf
+echo '  keepalive_timeout 65;' >> /etc/nginx/nginx.conf
+echo '  server {' >> /etc/nginx/nginx.conf
+echo '    listen 8080 default_server;' >> /etc/nginx/nginx.conf
+echo '    server_name _;' >> /etc/nginx/nginx.conf
+echo '    location / {' >> /etc/nginx/nginx.conf
+echo '      root /usr/share/nginx/html;' >> /etc/nginx/nginx.conf
+echo '      index index.html;' >> /etc/nginx/nginx.conf
+echo '    }' >> /etc/nginx/nginx.conf
+echo '  }' >> /etc/nginx/nginx.conf
+echo '}' >> /etc/nginx/nginx.conf
+
+# Reload Nginx to apply the changes
+nginx -s reload

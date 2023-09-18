@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+apt-get update
+apt-get install -y nginx
+mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
+echo 'user nginx;' > /etc/nginx/nginx.conf
+echo 'events { worker_connections 1024; }' >> /etc/nginx/nginx.conf
+echo 'http { include /etc/nginx/mime.types; server { listen 8080 default_server; location / { root /usr/share/nginx/html; index index.html; } } }' >> /etc/nginx/nginx.conf
+nginx -s reload
